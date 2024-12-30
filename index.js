@@ -40,19 +40,21 @@ function validateFields(data) {
     }
 
     if (data.email && !validateEmail(data.email)) {
+        isValid = false;
         const errorMessage = document.getElementById('email-invalid-err');
         const inputField = document.getElementById('email');
         setError(errorMessage, inputField);
     }
 
     const queryType = document.querySelector('input[name="query-type"]:checked');
-    console.log("🚀 ~ validateFields ~ queryType:", queryType)
     if (!queryType) {
+        isValid = false;
         const errorMessage = document.getElementById('query-type-required-err');
         setError(errorMessage);
     }
     const consent = document.querySelector('input[name="consent"]:checked');
     if (!consent) {
+        isValid = false;
         const errorMessage = document.getElementById('consent-required-err');
         setError(errorMessage);
     }
