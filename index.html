@@ -7,56 +7,82 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
 
   <title>Frontend Mentor | Contact form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
+  <main>
+    <div class="success" id="success-msg">
+      <img src="assets/images/icon-success-check.svg" alt="Success check icon">
+      <span>Message Sent!</span>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
 
-  Contact Us
+    <form id="form" novalidate>
+      <h1>Contact Us</h1>
+      <div class="name">
+        <div class="input-txt">
+          <label for="first-name">First Name *</label>
+          <input type="text" id="first-name" class="input-box" name="first-name" autocomplete="given-name"
+            aria-invalid="true" aria-describedby="first-name-required-err" required>
+          <span class="error-msg" id="first-name-required-err">This field is required</span>
+        </div>
+        <div class="input-txt">
+          <label for="last-name">Last Name *</label>
+          <input type="text" id="last-name" class="input-box" name="last-name" autocomplete="family-name"
+            aria-invalid="true" aria-describedby="last-name-required-err" required>
+          <span class="error-msg" id="last-name-required-err">This field is required</span>
+        </div>
+      </div>
 
-  First Name
-  This field is required
+      <div class="input-txt">
+        <label for="email-address">Email Address *</label>
+        <input type="email" id="email" class="input-box" name="email" autocomplete="email" aria-invalid="true"
+          aria-describedby="email-invalid-err email-required-err" required>
+        <span class="error-msg" id="email-invalid-err">Please enter a valid email address</span>
+        <span class="error-msg" id="email-required-err">This field is required</span>
+      </div>
 
-  Last Name
-  This field is required
+      <fieldset id="query-type" role="radiogroup" aria-required="true" aria-invalid="true"
+        aria-describedby="query-type-required-err">
+        <legend>Query Type *</legend>
+        <div class="radio-options">
+          <div class="option">
+            <input type="radio" id="general-enquiry" name="query-type" value="general-enquiry">
+            <label for="general-enquiry">General Enquiry</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="support-request" name="query-type" value="support-request">
+            <label for="support-request">Support Request</label>
+          </div>
+        </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+        <span class="error-msg" id="query-type-required-err">Please select a query type</span>
+      </fieldset>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+      <div class="input-txt">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" class="input-box" aria-invalid="true"
+          aria-describedby="message-required-err" required></textarea>
+        <span class="error-msg" id="message-required-err">This field is required</span>
+      </div>
 
-  Message
-  This field is required
+      <div class="input-txt">
+        <div>
+          <input type="checkbox" name="consent" id="consent" aria-invalid="true" aria-describedby="consent-required-err"
+            required>
+          <label for="consent">I consent to being contacted by the team *</label>
+        </div>
+        <span class="error-msg" id="consent-required-err">To submit this form, please consent to being contacted</span>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+      </div>
 
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
 </body>
 
 </html>
