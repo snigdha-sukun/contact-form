@@ -120,6 +120,10 @@ button:hover {
     display: none;
 }
 
+.consent {
+    cursor: pointer;
+}
+
 .input-txt {
     display: flex;
     flex-direction: column;
