@@ -58,8 +58,20 @@ input {
     cursor: pointer;
 }
 
-fieldset {
-    border: none;
+input:focus {
+    outline: none;
+    border: 2px solid var(--green-600-medium);
+}
+
+input[type='radio'] {
+    accent-color: var(--green-600-medium);
+}
+
+input[type='checkbox'] {
+    accent-color: var(--green-600-medium);
+}
+
+.query-type {
     padding: 0.5em;
 }
 
@@ -71,6 +83,11 @@ textarea {
     border-radius: 0.25em;
     cursor: pointer;
     resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border: 2px solid var(--green-600-medium);
 }
 
 button {
@@ -115,13 +132,14 @@ button:hover {
     margin-right: 1em;
 }
 
+.selected-option {
+    background-color: var(--green-200-lighter);
+    border: 2px solid var(--green-600-medium);
+}
+
 .error-msg {
     color: var(--red);
     display: none;
-}
-
-.consent {
-    cursor: pointer;
 }
 
 .input-txt {
@@ -129,6 +147,7 @@ button:hover {
     flex-direction: column;
     width: 100%;
     padding: 0.5em;
+    cursor: pointer;
 }
 
 .input-err {

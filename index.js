@@ -1,6 +1,7 @@
 const successMsg = document.getElementById('success-msg');
 
 const form = document.getElementById('form');
+const options = document.querySelectorAll('.option');
 
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -11,13 +12,13 @@ function resetErrors() {
     const inputTxt = document.querySelectorAll('.input-box');
     const errorMessages = document.querySelectorAll('.error-msg');
 
-    inputTxt.forEach((input) => {
-       input.classList.remove('input-err');
-    });
+    for(const input of inputTxt) {
+        input.classList.remove('input-err');
+	}
 
-    errorMessages.forEach((error) => {
+    for(const error of errorMessages) {
         error.style.display = 'none';
-    });
+    }
 }
 
 function setError(errorMessage, inputField) {
@@ -45,6 +46,7 @@ function validateFields(data) {
     }
 
     const queryType = document.querySelector('input[name="query-type"]:checked');
+    console.log("🚀 ~ validateFields ~ queryType:", queryType)
     if (!queryType) {
         const errorMessage = document.getElementById('query-type-required-err');
         setError(errorMessage);
@@ -72,3 +74,12 @@ function handleSubmit(e) {
 }
 
 form.addEventListener('submit', handleSubmit);
+
+for (const option of options) {
+    option.addEventListener('click', () => {
+        for (const option of options) {
+            option.classList.remove('selected-option');
+        }
+        option.classList.add('selected-option');
+    });
+}
