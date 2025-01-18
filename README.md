@@ -53,7 +53,7 @@ I learned how to use `autocomplete` and `aria-describedby` for linking error mes
 
 ```html
 <div class="input-txt">
-  <label for="email-address">Email Address *</label>
+  <label for="email">Email Address *</label>
   <input type="email" id="email" class="input-box" name="email" autocomplete="email" aria-invalid="true" aria-describedby="email-invalid-err email-required-err" required>
   <span class="error-msg" id="email-invalid-err">Please enter a valid email address</span>
   <span class="error-msg" id="email-required-err">This field is required</span>
